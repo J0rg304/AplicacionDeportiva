@@ -2,11 +2,6 @@
 
 Aplicación web desarrollada en Java con Spring Boot y Thymeleaf que permite visualizar información detallada sobre los partidos de la NFL, incluyendo equipos, resultados, estado del encuentro y más. También cuenta con autenticación de usuarios.
 
-## 📸 Capturas de Pantalla
-![Inicio](preview/nfl-home.png)
-![Detalle del Partido](preview/partido-detalle.png)
-![Login](preview/login.png)
-![Registro](preview/registro.png)
 
 ## 🚀 Funcionalidades
 
@@ -24,5 +19,3 @@ Aplicación web desarrollada en Java con Spring Boot y Thymeleaf que permite vis
 - Thymeleaf
 - Bootstrap 5
 - HTML/CSS/JavaScript
-
-## ⚙️ Cómo Ejecutar
