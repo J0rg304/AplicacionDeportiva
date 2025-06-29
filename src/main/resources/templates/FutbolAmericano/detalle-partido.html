@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Partido</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-dark text-white">
+
+<div class="container py-5">
+    <div class="card bg-secondary text-white shadow-lg p-4">
+
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <div class="text-center">
+                <img th:src="${partido.team1.teamIconUrl}" alt="Icono Equipo 1" class="img-fluid" style="height: 60px;">
+                <p th:text="${partido.team1.teamName}" class="mt-2 mb-0"></p>
+            </div>
+
+            <h2 class="mx-3">vs</h2>
+
+            <div class="text-center">
+                <img th:src="${partido.team2.teamIconUrl}" alt="Icono Equipo 2" class="img-fluid" style="height: 60px;">
+                <p th:text="${partido.team2.teamName}" class="mt-2 mb-0"></p>
+            </div>
+        </div>
+
+
+        <p th:if="${partido.matchDateTime != null}">
+            <strong>Fecha:</strong>
+            <span th:text="${partido.matchDateTime}">Fecha</span>
+        </p>
+
+        <p>
+            <strong>Liga:</strong> <span th:text="${partido.leagueName}">NFL</span>
+            (<span th:text="${partido.leagueSeason}">2023</span>)
+        </p>
+
+
+
+        <p th:if="${partido.timeZoneID != null}">
+            <strong>Zona Horaria:</strong>
+            <span th:text="${partido.timeZoneID}">TimeZone</span>
+        </p>
+
+
+        <p th:if="${partido.finalResult != null
+                  and partido.finalResult.pointsTeam1 != null
+                  and partido.finalResult.pointsTeam2 != null}">
+            <strong>Resultado Final:</strong>
+            <span th:text="${partido.finalResult.pointsTeam1}">0 -</span>
+            <span th:text="${partido.finalResult.pointsTeam2}">0</span>
+        </p>
+
+        <p>
+            <strong>Estado:</strong>
+            <span th:if="${partido.matchIsFinished}" style="color: blue">Finalizado</span>
+            <span th:if="${!partido.matchIsFinished}" class="text-warning">En juego o pendiente</span>
+        </p>
+
+        <p th:if="${partido.finalResult != null
+          and partido.finalResult.pointsTeam1 != null
+          and partido.finalResult.pointsTeam2 != null}">
+            <strong>Resultado Final:</strong>
+            <span th:text="${partido.finalResult.pointsTeam1}">0 -</span>
+            <span th:text="${partido.finalResult.pointsTeam2}">0</span>
+        </p>
+
+        <p th:if="${partido.finalResult != null and partido.finalResult.resultDescription != null}">
+            <strong>Descripción:</strong>
+            <span th:text="${partido.finalResult.resultDescription}"></span>
+        </p>
+
+
+        <a href="/nfl" class="btn btn-outline-light mt-4">Volver</a>
+    </div>
+</div>
+</body>
+</html>

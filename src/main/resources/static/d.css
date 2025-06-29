@@ -1,0 +1,18 @@
+body {
+    background-image: url('https://example.com/sports-background.jpg'); /* Cambia la URL por una imagen deportiva */
+    background-size: cover;
+    background-position: center;
+}
+.card {
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.btn {
+    transition: transform 0.3s ease-in-out;
+}
+.btn:hover {
+    transform: scale(1.05);
+}
